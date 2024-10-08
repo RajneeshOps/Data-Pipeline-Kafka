@@ -15,7 +15,7 @@ The architecture for this project consists of the following components:
 - **Kafka (Message Broker)**: Kafka acts as the message broker running on an EC2 instance, which processes and stores real-time streams of data from the producer.
 - **AWS (Consumers)**: The real-time stock data is consumed and stored in Amazon S3, cataloged with AWS Glue, and queried using Amazon Athena.
 
-![Architecture Diagram](insert_link_to_architecture_diagram_here)
+![Architecture Diagram](img/Architecture.png)
 
 ---
 
