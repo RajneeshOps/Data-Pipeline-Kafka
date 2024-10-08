@@ -15,7 +15,7 @@ The architecture for this project consists of the following components:
 - **Kafka (Message Broker)**: Kafka acts as the message broker running on an EC2 instance, which processes and stores real-time streams of data from the producer.
 - **AWS (Consumers)**: The real-time stock data is consumed and stored in Amazon S3, cataloged with AWS Glue, and queried using Amazon Athena.
 
-![Architecture Diagram](img/Architecture.png)
+![Architecture Diagram](img/Architecture.jpg)
 
 ---
 
@@ -33,9 +33,9 @@ The architecture for this project consists of the following components:
 - **Apache Kafka**: Download and install Kafka on your EC2 instance.
 
     ```bash
-    wget https://downloads.apache.org/kafka/3.3.1/kafka_2.12-3.3.1.tgz
-    tar -xvf kafka_2.12-3.3.1.tgz
-    cd kafka_2.12-3.3.1
+    wget https://downloads.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz
+    tar -xvf kafka_2.13-3.8.0.tgz
+    cd kafka_2.13-3.8.0
     ```
 
 ---
@@ -79,13 +79,19 @@ bin/kafka-console-consumer.sh --topic stock_market_data --bootstrap-server {EC2_
 
 ### AWS Integration for Data Processing
 ***Amazon S3 (Storage)***
-The consumer will push the stock market data into an S3 bucket for further analysis. Data can be stored as CSV or Parquet format.
+The consumer will push the stock market data into an S3 bucket for further analysis. 
+![](img/s3.png)
 
 ### AWS Glue (Data Cataloging)
 Set up an AWS Glue crawler to scan the S3 bucket and catalog the stock market data. This enables us to query the data using AWS Athena.
+![](img/03.png)
+![](img/04.png)
 
 ### Amazon Athena (Query Engine)
 Use Amazon Athena to query the stock market data stored in S3. With Glue providing the schema, Athena allows us to run SQL queries on the ingested real-time data.
+![](img/05.png)
+![](img/06.png)
+
 
 ### Conclusion
 This PoC demonstrates the real-time data pipeline for stock market data using Kafka as the backbone for streaming data and AWS services for storage, cataloging, and querying. By leveraging Kafka, we can ensure high-throughput, fault-tolerant data streams, while AWS Glue and Athena enable scalable and serverless data analytics.
