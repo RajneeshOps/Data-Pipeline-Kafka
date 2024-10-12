@@ -1,4 +1,4 @@
-# Kafka-End-to-End-Project
+# End-to-End 𝐃𝐚𝐭𝐚 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫𝐢𝐧𝐠 𝐏𝐢𝐩𝐞𝐥𝐢𝐧𝐞 designed to handle real-time stock market data! 📈💼
 
 ## Introduction
 In this Proof of Concept (PoC), we will demonstrate an end-to-end data engineering pipeline for real-time stock market data using **Apache Kafka**. The project uses a stock market app simulation to produce data in real-time, which is then consumed by an AWS-based ecosystem that stores, catalogs, and queries the data for further analysis.
